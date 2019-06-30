@@ -1,6 +1,14 @@
 
 
-<!--pull code from employee solved 07-01-17 solved?-->
+<!--pulled code from employee solved 07-01-17
+7 trains:
+1.midnight train agusta,georgia
+2.Crazy train hollywood,cali
+3.Skizzy train brooklyn,ny
+4.doobie train boulder,colorado
+5.runaway train tampa,fla
+6.soul train dallas,texas
+7.Quad city train las vegas,nevada-->
 
  <!DOCTYPE html >
 
@@ -33,7 +41,7 @@
 
     <body>
 
-        <!-- Employee Tracker -->
+        <!--  Tracker -->
         <div class="container">
 
             <!-- Jumbotron -->
@@ -50,7 +58,7 @@
                     <div class="card mb-4">
                         <div class="card-header">Current Train Schedule</div>
                         <div class="card-body">
-                            <table class="table table-sm table-hover" id='employee-table'>
+                            <table class="table table-sm table-hover" id='train-table'>
                                 <thead>
                                     <tr>
                                         <th scope="col">Train Name</th>
@@ -79,23 +87,23 @@
                             <!-- Entry Form -->
                             <form>
                                 <div class="form-group">
-                                    <label for="employee-name-input">Train Name</label>
-                                    <input class="form-control" id="employee-name-input" placeholder="Jane Doe"
+                                    <label for="train-name-input">Train Name</label>
+                                    <input class="form-control" id="train-name-input" placeholder="New Train"
                                         type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label for="role-input">Destination</label>
-                                    <input class="form-control" id="role-input" placeholder="CEO" type="text">
+                                    <label for="destination-input">Destination</label>
+                                    <input class="form-control" id="destination-input" placeholder="New destination" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label for="start-input">First Train Time (HH:mm military time)</label>
-                                    <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
+                                    <label for="first-input">First Train Time (HH:mm military time)</label>
+                                    <input class="form-control" id="first-input" placeholder="00:00" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label for="rate-input">Frequency (mins)</label>
-                                    <input class="form-control" id="rate-input" placeholder="200000" type="text">
+                                    <label for="frequency-input">Frequency (mins)</label>
+                                    <input class="form-control" id="frequency-input" placeholder="15 mins" type="text">
                                 </div>
-                                <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+                                <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
                             </form>
 
                         </div>
@@ -106,7 +114,7 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="timesheetLogic.js"></script>
+        <script src="train.js"></script>
 
     </body>
 
