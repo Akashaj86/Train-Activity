@@ -10,9 +10,9 @@
 // 1. Initialize Firebase
 var config = {
     apiKey: "AIzaSyBr5qF_o7jiquBrHq76BFrGqRVoKcqVErQ",//changed to my firebase api key
-    authDomain: "time-sheet-55009.firebaseapp.com",
-    databaseURL: "https://time-sheet-55009.firebaseio.com",
-    storageBucket: "time-sheet-55009.appspot.com"
+    authDomain: "trainappaj.firebaseapp.com",         //added new auth
+    databaseURL: "https: //trainappaj.firebaseio.com", //added new url
+    storageBucket: "gs: //trainappaj.appspot.com/" //grabbed .com and took screenshot from where
 };
 
 firebase.initializeApp(config);
