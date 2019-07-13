@@ -123,14 +123,15 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
         min: nextArrival,
         next: minsAway
     }
+    console.log(newTrain);
 // Create the new row
 var newRow = $("<tr>").append(
-    $("<td>").text(newTrain.trainName),
-    $("<td>").text(newTrain.destination),
-    $("<td>").text(newTrain.trainFirstConverted),
-    $("<td>").text(newTrain.frequency),
-    $("<td>").text(newTrain.nextArrival),
-    $("<td>").text(newTrain.minsAway)
+    $("<td>").text(trainName),
+    $("<td>").text(destination),
+    $("<td>").text(trainFirstConverted),
+    $("<td>").text(frequency),
+    $("<td>").text(nextArrival),
+    $("<td>").text(minsAway)
 );
 
 // Append the new row to the table
