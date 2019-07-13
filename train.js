@@ -108,6 +108,8 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 // THE MATH!
     //subtracts the first train time back a year to ensure it's before current time.
     var trainFirstConverted = moment(firstTrain, "hh:mm").subtract("1, years");
+    var trainTimePretty = moment(trainFirstConverted).format("MMMM Do YYYY, h:mm a");
+    console.log("trainTimePretty",trainTimePretty);
     // the time difference between current time and the first train
     //var difference = currentTime.diff(moment(trainFirstConverted), "minutes");
     var difference = moment().diff(moment(trainFirstConverted), "minutes");
@@ -128,7 +130,6 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 var newRow = $("<tr>").append(
     $("<td>").text(trainName),
     $("<td>").text(destination),
-    $("<td>").text(trainFirstConverted),
     $("<td>").text(frequency),
     $("<td>").text(nextArrival),
     $("<td>").text(minsAway)
