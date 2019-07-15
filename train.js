@@ -31,7 +31,7 @@ var firebaseConfig = {
     messagingSenderId: "301302269873",
     appId: "1:301302269873:web:4365952f285b5a20"
 };
- 
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
@@ -91,7 +91,7 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     // console.log(frequency);
 
     // Prettify the employee start
-   // var trainFirstPretty = moment.unix(trainFirst).format("MM/DD/YYYY");
+    // var trainFirstPretty = moment.unix(trainFirst).format("MM/DD/YYYY");
 
     // Calculate the months worked using hardcore math
     // To calculate the months worked
@@ -102,20 +102,19 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     //var trainBilled = trainMonths * frequency;
     // console.log(trainBilled);
 
-    
+
 
     //re-added moment code
-// THE MATH!
+    // THE MATH!
     //subtracts the first train time back a year to ensure it's before current time.
     var trainFirstConverted = moment(firstTrain, "hh:mm").subtract("1, years");
-    var trainTimePretty = moment(trainFirstConverted).format("MMMM Do YYYY, h:mm a");
-    console.log("trainTimePretty",trainTimePretty);
+
     // the time difference between current time and the first train
     //var difference = currentTime.diff(moment(trainFirstConverted), "minutes");
     var difference = moment().diff(moment(trainFirstConverted), "minutes");
     var remainder = difference % frequency;
     var minsAway = frequency - remainder;
-    var nextArrival = moment().add(nextArrival, "minutes").format("hh:mm a");
+    var nextArrival = moment().add(minsAway, "minutes");
 
     var newTrain = {
         name: trainName,
@@ -126,20 +125,20 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
         next: minsAway
     }
     console.log(newTrain);
-// Create the new row
-var newRow = $("<tr>").append(
-    $("<td>").text(trainName),
-    $("<td>").text(destination),
-    $("<td>").text(frequency),
-    $("<td>").text(nextArrival),
-    $("<td>").text(minsAway)
-);
+    // Create the new row
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destination),
+        $("<td>").text(frequency),
+        $("<td>").text(nextArrival),
+        $("<td>").text(minsAway)
+    );
 
-// Append the new row to the table
-$("#train-table > tbody").append(newRow);
+    // Append the new row to the table
+    $("#train-table > tbody").append(newRow);
 
     // console.log(newTrain);
-     //database.ref().push(newTrain);
+    //database.ref().push(newTrain);
 
     $("#trainNameInput").val("");
     $("#destinationInput").val("");
@@ -151,7 +150,7 @@ $("#train-table > tbody").append(newRow);
 
 });
 
-  // Example Time Math
+  
   // -----------------------------------------------------------------------------
   // Assume Employee start date of January 1, 2015
   // Assume current date is March 1, 2016
